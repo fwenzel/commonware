@@ -41,20 +41,20 @@ class CommonLogger(logging.Logger):
     def _get_extra(self):
         return {'REMOTE_ADDR': get_remote_addr(),}
 
-    def info(self, msg):
-        logging.Logger.info(self, msg, extra=self._get_extra())
+    def info(self, msg, *args):
+        logging.Logger.info(self, msg % args, extra=self._get_extra())
 
-    def debug(self, msg):
-        logging.Logger.debug(self, msg, extra=self._get_extra())
+    def debug(self, msg, *args):
+        logging.Logger.debug(self, msg % args, extra=self._get_extra())
 
-    def warn(self, msg):
-        logging.Logger.warn(self, msg, extra=self._get_extra())
+    def warn(self, msg, *args):
+        logging.Logger.warn(self, msg % args, extra=self._get_extra())
 
-    def error(self, msg):
-        logging.Logger.error(self, msg, extra=self._get_extra())
+    def error(self, msg, *args):
+        logging.Logger.error(self, msg % args, extra=self._get_extra())
 
-    def exception(self, msg):
-        logging.Logger.exception(self, msg, extra=self._get_extra())
+    def exception(self, msg, *args):
+        logging.Logger.exception(self, msg % args, extra=self._get_extra())
 
-    def critical(self, msg):
-        logging.Logger.exception(self, msg, extra=self._get_extra())
+    def critical(self, msg, *args):
+        logging.Logger.exception(self, msg % args, extra=self._get_extra())
