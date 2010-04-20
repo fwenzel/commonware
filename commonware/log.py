@@ -20,7 +20,7 @@ class ThreadRequestMiddleware(object):
     logging wrapper can access it.
     """
 
-    def process_request(request):
+    def process_request(self, request):
         set_remote_addr(request.META.get('REMOTE_ADDR', ''))
 
 
